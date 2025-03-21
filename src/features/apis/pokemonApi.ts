@@ -14,7 +14,7 @@ export const pokemonApi = {
     const result: PokemonsProps[] = data?.results?.map(
       (pokemon: PokemonsProps) => ({
         url: pokemon.url,
-        name: pokemon.name.toLocaleUpperCase(),
+        name: pokemon?.name?.toLocaleUpperCase(),
         id: pokemon?.url?.split("/").filter(Boolean).pop(),
       })
     );
