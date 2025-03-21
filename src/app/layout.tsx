@@ -1,10 +1,11 @@
-import { queryClient } from "@/utils/client";
+import BackgroundImage from "@/components/general/BackgroundImage";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Pokemon website",
@@ -17,11 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <QueryClientProvider client={queryClient}>
+    <Providers>
       <html lang="pt-br">
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <body className="--font-roboto">{children}</body>
+        <body className="--font-roboto">
+          <BackgroundImage />
+          <CssBaseline />
+          {children}
+        </body>
       </html>
-    </QueryClientProvider>
+    </Providers>
   );
 }
