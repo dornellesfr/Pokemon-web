@@ -21,7 +21,7 @@ export default function RootLayout({
     <Providers>
       <html lang="pt-br">
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <body className="--font-roboto">
+        <body>
           <BackgroundImage />
           <CssBaseline />
           {children}

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <meta name="viewport" content="initial-scale=1, width=device-width" />
-      <body className="--font-roboto">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

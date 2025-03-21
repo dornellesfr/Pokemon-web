@@ -5,6 +5,6 @@ import { pokemonApi } from "../apis/pokemonApi";
 export function useGetPokemons(data: getPokemonsFilter) {
   return useQuery({
     queryFn: () => pokemonApi.getPokemons(data),
-    queryKey: ["useGetPokemons"],
+    queryKey: ["useGetPokemons", data],
   });
 }

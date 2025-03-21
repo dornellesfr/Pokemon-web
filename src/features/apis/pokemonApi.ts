@@ -1,4 +1,8 @@
-import { getPokemonsFilter, PokemonsProps } from "@/interfaces/pokemonsApi";
+import {
+  getPokemonsFilter,
+  PokemonProps,
+  PokemonsProps,
+} from "@/interfaces/pokemonsApi";
 import { restClient } from "@/utils/client";
 
 export const pokemonApi = {
@@ -11,8 +15,17 @@ export const pokemonApi = {
       (pokemon: PokemonsProps) => ({
         url: pokemon.url,
         name: pokemon.name.toLocaleUpperCase(),
+        id: pokemon?.url?.split("/").filter(Boolean).pop(),
       })
     );
+
+    return result;
+  },
+
+  getPokemon: async ({ id }: PokemonsProps) => {
+    const { data } = await restClient.get(`/pokemon/${id}`);
+
+    const result: PokemonProps = data;
 
     return result;
   },
