@@ -22,7 +22,7 @@ export const pokemonApi = {
     return result;
   },
 
-  getPokemon: async ({ id }: PokemonsProps) => {
+  getPokemon: async (id: string) => {
     const { data } = await restClient.get(`/pokemon/${id}`);
 
     const result: PokemonProps = data;

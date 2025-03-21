@@ -1,8 +1,8 @@
-import { PokemonCardProps } from "@/interfaces/pokemonsApi";
+import { PokemonsProps } from "@/interfaces/pokemonsApi";
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-export default function PokemonCard({ id, name, isLoading }: PokemonCardProps) {
+export default function PokemonCard({ id, name }: PokemonsProps) {
   const router = useRouter();
 
   return (
@@ -20,7 +20,7 @@ export default function PokemonCard({ id, name, isLoading }: PokemonCardProps) {
           }}
           component="img"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-          alt="Descrição da imagem"
+          alt="Pokemon-img"
           sx={{
             width: "60%",
             maxWidth: "70%",

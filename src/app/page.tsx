@@ -8,7 +8,7 @@ import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [limit, _] = useState(9);
+  const [limit] = useState(9);
   const [offset, setOffset] = useState(0);
 
   const { data: pokemons, isLoading } = useGetPokemons({ limit, offset });
@@ -55,7 +55,7 @@ export default function Home() {
       <Box
         component="img"
         src={"/pokemon_logo.svg"}
-        alt="Descrição da imagem"
+        alt="pokemon-logo"
         sx={{
           width: "50%",
           maxWidth: "50%",
@@ -86,10 +86,9 @@ export default function Home() {
             ))
           : pokemons?.map((pokemon) => (
               <PokemonCard
-                key={pokemon.id}
-                id={pokemon.id}
-                name={pokemon.name}
-                isLoading={isLoading}
+                key={pokemon?.id}
+                id={pokemon?.id}
+                name={pokemon?.name}
               />
             ))}
         <Stack

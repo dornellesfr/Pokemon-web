@@ -1,10 +1,9 @@
-import { PokemonCardProps } from "@/interfaces/pokemonsApi";
 import { useQuery } from "@tanstack/react-query";
 import { pokemonApi } from "../apis/pokemonApi";
 
-export function useGetPokemons({ id }: PokemonCardProps) {
+export function useGetPokemon(id: string) {
   return useQuery({
     queryFn: () => pokemonApi.getPokemon(id),
-    queryKey: ["useGetPokemons"],
+    queryKey: ["useGetPokemon"],
   });
 }

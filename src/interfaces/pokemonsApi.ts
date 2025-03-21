@@ -4,13 +4,6 @@ export interface getPokemonsFilter {
 }
 
 export interface PokemonsProps {
-  name: string;
-  url: string;
-  id: string;
-}
-
-export interface PokemonCardProps {
-  isLoading?: boolean;
   name?: string;
   url?: string;
   id?: string;
@@ -125,5 +118,5 @@ export interface Sprites {
       front_shiny_female: string | null;
     };
   };
-  versions?: any; // pode ser detalhado ainda mais se necessário
+  versions?: string;
 }
